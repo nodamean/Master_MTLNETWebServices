@@ -1,0 +1,1634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://muangthai.co.th/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://muangthai.co.th/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://muangthai.co.th/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CalculatePremium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculatePremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompletePremium">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompletePremiumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompletePremiumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInsured">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInsuredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateInsuredResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateAccidentRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccidentA_Insured" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccidentB_Insured" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccidentC_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateAccidentRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateAccidentRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RiderValueElementMobile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Detail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Desc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Insure1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Premium1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Desc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Insure2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Premium2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Desc3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Insure3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Premium3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Desc4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Insure4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Premium4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_TotalDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_TotalInsure" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_TotalPremium" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Remark1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Remark2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Remark3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Remark4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Code1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Code2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Code3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_Code4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rider_VisibleFlags" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rider_DiasableControl" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateADBRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateADBRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateADBRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateCancerRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateCancerRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateCancerRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateChildRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Child_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateChildRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateChildRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappyLadyRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="HappyLadyCoverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappyLadyRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateHappyLadyRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappyLadyPlusRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="HappyLadyPlusCoverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappyLadyPlusRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateHappyLadyPlusRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappyLivingRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="HappyLiving_Insured" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extraPremium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappyLivingRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateHappyLivingRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHealthRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="HealthType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HB_Insured" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HSCoverage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HBCoverage_item" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HSCoverage_item" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HSExtra_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHealthRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateHealthRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMultipleCiRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MultipleCi_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMultipleCiRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateMultipleCiRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateOnceTimePeRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateOnceTimePeRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateOnceTimePeRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateOPDRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OpdCoverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateOPDRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateOPDRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePARider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaCoverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePARiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculatePARiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePBRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BeneficiariesGender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeneficiariesAge" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePBRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculatePBRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTPDRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tpd_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTPDRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateTPDRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePureCancerRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Id4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Num4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePureCancerRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculatePureCancerRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTermRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term_Insured" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term_Coverage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExtraPremium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateTermRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateTermRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePERider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PE_Insured" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PE_Coverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePERiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculatePERiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateWPRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateWPRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateWPRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateVIPRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="VIPCoverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateVIPRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateVIPRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRCCRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RCC_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRCCRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateRCCRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappy_KidsRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Happy_KidsCoverage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateHappy_KidsRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateHappy_KidsRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMAORider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MAOInsure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMAORiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateMAORiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateDRRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DRInsure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateDRRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateDRRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateKbankSingleCI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MultipleCi_Insured" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateKbankSingleCIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateKbankSingleCIResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRHSRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RHS_Plan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRHSRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateRHSRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRHPRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RHP_Plan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRHPRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateRHPRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRHGRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RHG_Plan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRHGRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateRHGRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRPAIRider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainInsured" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainPremium" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerGender" type="s1:char" />
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerOccupationGroup" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentMethod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedPlanCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RPAI_Plan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateRPAIRiderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateRPAIRiderResult" type="tns:RiderValueElementMobile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculatePremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePremium" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompletePremiumSoapIn">
+    <wsdl:part name="parameters" element="tns:CompletePremium" />
+  </wsdl:message>
+  <wsdl:message name="CompletePremiumSoapOut">
+    <wsdl:part name="parameters" element="tns:CompletePremiumResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInsuredSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateInsured" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInsuredSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateInsuredResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateAccidentRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateAccidentRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateAccidentRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateAccidentRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateADBRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateADBRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateADBRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateADBRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateCancerRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateCancerRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateCancerRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateCancerRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChildRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateChildRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateChildRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateChildRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappyLadyRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateHappyLadyRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappyLadyRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateHappyLadyRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappyLadyPlusRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateHappyLadyPlusRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappyLadyPlusRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateHappyLadyPlusRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappyLivingRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateHappyLivingRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappyLivingRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateHappyLivingRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHealthRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateHealthRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHealthRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateHealthRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMultipleCiRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateMultipleCiRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMultipleCiRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateMultipleCiRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateOnceTimePeRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateOnceTimePeRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateOnceTimePeRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateOnceTimePeRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateOPDRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateOPDRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateOPDRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateOPDRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePARiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePARider" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePARiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePARiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePBRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePBRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePBRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePBRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTPDRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateTPDRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTPDRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateTPDRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePureCancerRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePureCancerRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePureCancerRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePureCancerRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTermRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateTermRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTermRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateTermRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePERiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePERider" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePERiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePERiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateWPRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateWPRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateWPRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateWPRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateVIPRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateVIPRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateVIPRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateVIPRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRCCRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRCCRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRCCRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRCCRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappy_KidsRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateHappy_KidsRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateHappy_KidsRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateHappy_KidsRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMAORiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateMAORider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMAORiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateMAORiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateDRRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateDRRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateDRRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateDRRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateKbankSingleCISoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateKbankSingleCI" />
+  </wsdl:message>
+  <wsdl:message name="CalculateKbankSingleCISoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateKbankSingleCIResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRHSRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRHSRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRHSRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRHSRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRHPRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRHPRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRHPRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRHPRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRHGRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRHGRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRHGRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRHGRiderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRPAIRiderSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateRPAIRider" />
+  </wsdl:message>
+  <wsdl:message name="CalculateRPAIRiderSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateRPAIRiderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_SQM_CalculateServiceSoap">
+    <wsdl:operation name="CalculatePremium">
+      <wsdl:input message="tns:CalculatePremiumSoapIn" />
+      <wsdl:output message="tns:CalculatePremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompletePremium">
+      <wsdl:input message="tns:CompletePremiumSoapIn" />
+      <wsdl:output message="tns:CompletePremiumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInsured">
+      <wsdl:input message="tns:CalculateInsuredSoapIn" />
+      <wsdl:output message="tns:CalculateInsuredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAccidentRider">
+      <wsdl:input message="tns:CalculateAccidentRiderSoapIn" />
+      <wsdl:output message="tns:CalculateAccidentRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateADBRider">
+      <wsdl:input message="tns:CalculateADBRiderSoapIn" />
+      <wsdl:output message="tns:CalculateADBRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCancerRider">
+      <wsdl:input message="tns:CalculateCancerRiderSoapIn" />
+      <wsdl:output message="tns:CalculateCancerRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateChildRider">
+      <wsdl:input message="tns:CalculateChildRiderSoapIn" />
+      <wsdl:output message="tns:CalculateChildRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLadyRider">
+      <wsdl:input message="tns:CalculateHappyLadyRiderSoapIn" />
+      <wsdl:output message="tns:CalculateHappyLadyRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLadyPlusRider">
+      <wsdl:input message="tns:CalculateHappyLadyPlusRiderSoapIn" />
+      <wsdl:output message="tns:CalculateHappyLadyPlusRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLivingRider">
+      <wsdl:input message="tns:CalculateHappyLivingRiderSoapIn" />
+      <wsdl:output message="tns:CalculateHappyLivingRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHealthRider">
+      <wsdl:input message="tns:CalculateHealthRiderSoapIn" />
+      <wsdl:output message="tns:CalculateHealthRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMultipleCiRider">
+      <wsdl:input message="tns:CalculateMultipleCiRiderSoapIn" />
+      <wsdl:output message="tns:CalculateMultipleCiRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOnceTimePeRider">
+      <wsdl:input message="tns:CalculateOnceTimePeRiderSoapIn" />
+      <wsdl:output message="tns:CalculateOnceTimePeRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOPDRider">
+      <wsdl:input message="tns:CalculateOPDRiderSoapIn" />
+      <wsdl:output message="tns:CalculateOPDRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePARider">
+      <wsdl:input message="tns:CalculatePARiderSoapIn" />
+      <wsdl:output message="tns:CalculatePARiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePBRider">
+      <wsdl:input message="tns:CalculatePBRiderSoapIn" />
+      <wsdl:output message="tns:CalculatePBRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTPDRider">
+      <wsdl:input message="tns:CalculateTPDRiderSoapIn" />
+      <wsdl:output message="tns:CalculateTPDRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePureCancerRider">
+      <wsdl:input message="tns:CalculatePureCancerRiderSoapIn" />
+      <wsdl:output message="tns:CalculatePureCancerRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTermRider">
+      <wsdl:input message="tns:CalculateTermRiderSoapIn" />
+      <wsdl:output message="tns:CalculateTermRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePERider">
+      <wsdl:input message="tns:CalculatePERiderSoapIn" />
+      <wsdl:output message="tns:CalculatePERiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateWPRider">
+      <wsdl:input message="tns:CalculateWPRiderSoapIn" />
+      <wsdl:output message="tns:CalculateWPRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateVIPRider">
+      <wsdl:input message="tns:CalculateVIPRiderSoapIn" />
+      <wsdl:output message="tns:CalculateVIPRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRCCRider">
+      <wsdl:input message="tns:CalculateRCCRiderSoapIn" />
+      <wsdl:output message="tns:CalculateRCCRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappy_KidsRider">
+      <wsdl:input message="tns:CalculateHappy_KidsRiderSoapIn" />
+      <wsdl:output message="tns:CalculateHappy_KidsRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMAORider">
+      <wsdl:input message="tns:CalculateMAORiderSoapIn" />
+      <wsdl:output message="tns:CalculateMAORiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDRRider">
+      <wsdl:input message="tns:CalculateDRRiderSoapIn" />
+      <wsdl:output message="tns:CalculateDRRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateKbankSingleCI">
+      <wsdl:input message="tns:CalculateKbankSingleCISoapIn" />
+      <wsdl:output message="tns:CalculateKbankSingleCISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHSRider">
+      <wsdl:input message="tns:CalculateRHSRiderSoapIn" />
+      <wsdl:output message="tns:CalculateRHSRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHPRider">
+      <wsdl:input message="tns:CalculateRHPRiderSoapIn" />
+      <wsdl:output message="tns:CalculateRHPRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHGRider">
+      <wsdl:input message="tns:CalculateRHGRiderSoapIn" />
+      <wsdl:output message="tns:CalculateRHGRiderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRPAIRider">
+      <wsdl:input message="tns:CalculateRPAIRiderSoapIn" />
+      <wsdl:output message="tns:CalculateRPAIRiderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_SQM_CalculateServiceSoap" type="tns:WS_SQM_CalculateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculatePremium">
+      <soap:operation soapAction="http://muangthai.co.th/CalculatePremium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompletePremium">
+      <soap:operation soapAction="http://muangthai.co.th/CompletePremium" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInsured">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateInsured" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAccidentRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateAccidentRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateADBRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateADBRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCancerRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateCancerRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateChildRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateChildRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLadyRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateHappyLadyRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLadyPlusRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateHappyLadyPlusRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLivingRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateHappyLivingRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHealthRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateHealthRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMultipleCiRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateMultipleCiRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOnceTimePeRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateOnceTimePeRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOPDRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateOPDRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePARider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculatePARider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePBRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculatePBRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTPDRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateTPDRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePureCancerRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculatePureCancerRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTermRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateTermRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePERider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculatePERider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateWPRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateWPRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateVIPRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateVIPRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRCCRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateRCCRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappy_KidsRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateHappy_KidsRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMAORider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateMAORider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDRRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateDRRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateKbankSingleCI">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateKbankSingleCI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHSRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateRHSRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHPRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateRHPRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHGRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateRHGRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRPAIRider">
+      <soap:operation soapAction="http://muangthai.co.th/CalculateRPAIRider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_SQM_CalculateServiceSoap12" type="tns:WS_SQM_CalculateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculatePremium">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculatePremium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompletePremium">
+      <soap12:operation soapAction="http://muangthai.co.th/CompletePremium" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInsured">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateInsured" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAccidentRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateAccidentRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateADBRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateADBRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateCancerRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateCancerRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateChildRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateChildRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLadyRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateHappyLadyRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLadyPlusRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateHappyLadyPlusRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappyLivingRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateHappyLivingRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHealthRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateHealthRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMultipleCiRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateMultipleCiRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOnceTimePeRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateOnceTimePeRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOPDRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateOPDRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePARider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculatePARider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePBRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculatePBRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTPDRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateTPDRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePureCancerRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculatePureCancerRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTermRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateTermRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePERider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculatePERider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateWPRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateWPRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateVIPRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateVIPRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRCCRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateRCCRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateHappy_KidsRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateHappy_KidsRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMAORider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateMAORider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDRRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateDRRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateKbankSingleCI">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateKbankSingleCI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHSRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateRHSRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHPRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateRHPRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRHGRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateRHGRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRPAIRider">
+      <soap12:operation soapAction="http://muangthai.co.th/CalculateRPAIRider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_SQM_CalculateService">
+    <wsdl:port name="WS_SQM_CalculateServiceSoap" binding="tns:WS_SQM_CalculateServiceSoap">
+      <soap:address location="http://proposal.muangthai.co.th/CalculateServices/WS_SQM_CalculateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_SQM_CalculateServiceSoap12" binding="tns:WS_SQM_CalculateServiceSoap12">
+      <soap12:address location="http://proposal.muangthai.co.th/CalculateServices/WS_SQM_CalculateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:complexType name="SMCINQ06D_1_AllSmileActivityList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="place" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="seat_each" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="seat_each_unit" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max_book_seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="point" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="activity_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="activity_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="officer_book_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="officer_book_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_by_type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="remain_seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type_desc" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max_book_seat_pstptn" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SMCINQ04D_1_F5_SmileBranchList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="branch_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="branch_name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SMCINQ05D_2_SmilePointHistoryList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="activity_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="booked_date" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="booked_time" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="booked_no" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="booked_location" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="point" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="total_point" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="expiry_date" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="expiry_point" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sub_activity_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sub_activity_name_2" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SMCINQ32D_1_AllSmileActivityList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="place" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="seat_each" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="seat_each_unit" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max_book_seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="point" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="activity_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="activity_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="officer_book_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="officer_book_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_by_type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="remain_seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type_desc" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max_book_seat_pstptn" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SMCINQ04D_SmileActivityList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="place" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="show_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="show_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_startdate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="book_enddate" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="remain_seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="max_book_seat" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="point" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SetInvoiceRerunByPolicyNumber">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetInvoiceRerunByPolicyNumber_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number_out" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_generated_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_generated_time" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetNewSmilePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_old_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_new_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_new_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_channel_changing" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_email" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetNewSmilePassword_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetBookSmileActivity">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_activity_id" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_mobile_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_request_branch_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_request_branch_name" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetBookSmileActivity_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_before_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_after_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_point" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllSmileActivityList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_code" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllSmileActivityList_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_all_smile_activity_list" type="tns:SMCINQ06D_1_AllSmileActivityList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckSmilePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckSmilePassword_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_changed_password_channel" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_changed_password_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_changed_password_time" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetUnlockSmilePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetUnlockSmilePassword_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetSmileBranchList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetSmileBranchList_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_smile_branch_list" type="tns:SMCINQ04D_1_F5_SmileBranchList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="_SetNewFormA_NEW">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_running" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_hospital_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_create_DD" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_create_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_create_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_DD" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_time_HH" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_time_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_time_HH" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_time_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y1" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y1_RB_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y2_RBO_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y3" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_N1" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_N2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_N3" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_type" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_reason_detail_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_expand" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y3_amount" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="_SetNewFormA_NEW_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_ref_dupplicate" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetSmilePointHistoryList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_startdate" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_enddate" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_isShowAll" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetSmilePointHistoryList_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_startdate_out" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_enddate_out" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_smile_point_history_list" type="tns:SMCINQ05D_2_SmilePointHistoryList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetBookSmileActivity_NEW">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_activity_id" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_mobile_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_request_branch_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_request_branch_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_additional_amount" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetBookSmileActivity_NEW_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_before_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_after_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_point" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_get_discount_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_get_discount_percent" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_get_discount_from" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_receive_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_comment" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetRejectFormA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_running" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetRejectFormA_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckValidCard">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckValidCard_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_changed_password_channel" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_changed_password_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_changed_password_time" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_isLocked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_isRegistered" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_password_channel_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_password_channel_desc" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_password_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_password_status" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetTaxInvoiceOnlineByPolicyNumber">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_taxinvoice_year" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetTaxInvoiceOnlineByPolicyNumber_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number_out" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetLockSmilePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetLockSmilePassword_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllSmileActivityList_NEW">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_code" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllSmileActivityList_NEW_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_all_smile_activity_list" type="tns:SMCINQ32D_1_AllSmileActivityList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetFormADoc">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_running" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R101" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R102" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R103" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R104" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R105" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R106" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R107" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R108" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R109" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R110" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R111" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R112" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R113" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R114" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R115" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R201" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R202" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R203" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R204" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R205" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R206" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R207" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R208" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R209" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R210" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R211" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R212" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R213" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R214" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R215" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_R300" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetFormADoc_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetNewFormA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_running" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_hospital_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_create_DD" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_create_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_create_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_DD" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_time_HH" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admitted_time_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_time_HH" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_send_time_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y1" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y1_RB_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y2_RBO_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y3" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_N1" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_N2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_N3" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_type" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_reason_detail_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_expand" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_Y3_amount" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetNewFormA_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_ref_dupplicate" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckBookSmileActivity_NEW">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_activity_id" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_mobile_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_additional_amount" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckBookSmileActivity_NEW_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_before_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_after_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_point" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_get_discount_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_get_discount_percent" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_get_discount_from" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetRejectReasonFormA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_running" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N101" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N102" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N103" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N104" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N105" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N106" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N107" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N108" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N109" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N110" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N111" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N112" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N113" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N114" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N115" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N116" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N117" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N118" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N119" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N120" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N121" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N122" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N123" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N124" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N125" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N126" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N127" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N128" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N129" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N130" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N201" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N202" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N203" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N204" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N205" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N206" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N207" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N208" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N209" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N210" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N211" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N212" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N213" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N214" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N215" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N216" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N217" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N218" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N219" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N220" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N221" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N222" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N223" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N224" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N225" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N226" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N227" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N228" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N229" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N230" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N301" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N302" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N303" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N304" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N305" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N306" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N307" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N308" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N309" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N310" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N311" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N312" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N313" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N314" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N315" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N316" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N317" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N318" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N319" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N320" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N321" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N322" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N323" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N324" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N325" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N326" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N327" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N328" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N329" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_N330" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetRejectReasonFormA_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetSmileActivityList">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetSmileActivityList_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_activity_list" type="tns:SMCINQ04D_SmileActivityList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ResetSmilePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_card_seq_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_channel_changing" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ResetSmilePassword_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_new_reset_smile_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetDeleteFormA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_YY" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_MM" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_refcode_running" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetDeleteFormA_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckBookSmileActivity">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_username" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_admin_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_activity_id" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_mobile_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_home_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_office_phone_number_ext" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_branch_code" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckBookSmileActivity_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_before_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_smile_point_after_booked" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_point" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_book_no" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="SetInvoiceRerunByPolicyNumberInput">
+    <part name="parameters" element="tns:SetInvoiceRerunByPolicyNumber" />
+  </message>
+  <message name="SetInvoiceRerunByPolicyNumberOutput">
+    <part name="parameters" element="tns:SetInvoiceRerunByPolicyNumber_Response" />
+  </message>
+  <message name="SetNewSmilePasswordInput">
+    <part name="parameters" element="tns:SetNewSmilePassword" />
+  </message>
+  <message name="SetNewSmilePasswordOutput">
+    <part name="parameters" element="tns:SetNewSmilePassword_Response" />
+  </message>
+  <message name="SetBookSmileActivityInput">
+    <part name="parameters" element="tns:SetBookSmileActivity" />
+  </message>
+  <message name="SetBookSmileActivityOutput">
+    <part name="parameters" element="tns:SetBookSmileActivity_Response" />
+  </message>
+  <message name="GetAllSmileActivityListInput">
+    <part name="parameters" element="tns:GetAllSmileActivityList" />
+  </message>
+  <message name="GetAllSmileActivityListOutput">
+    <part name="parameters" element="tns:GetAllSmileActivityList_Response" />
+  </message>
+  <message name="CheckSmilePasswordInput">
+    <part name="parameters" element="tns:CheckSmilePassword" />
+  </message>
+  <message name="CheckSmilePasswordOutput">
+    <part name="parameters" element="tns:CheckSmilePassword_Response" />
+  </message>
+  <message name="SetUnlockSmilePasswordInput">
+    <part name="parameters" element="tns:SetUnlockSmilePassword" />
+  </message>
+  <message name="SetUnlockSmilePasswordOutput">
+    <part name="parameters" element="tns:SetUnlockSmilePassword_Response" />
+  </message>
+  <message name="GetSmileBranchListInput">
+    <part name="parameters" element="tns:GetSmileBranchList" />
+  </message>
+  <message name="GetSmileBranchListOutput">
+    <part name="parameters" element="tns:GetSmileBranchList_Response" />
+  </message>
+  <message name="_SetNewFormA_NEWInput">
+    <part name="parameters" element="tns:_SetNewFormA_NEW" />
+  </message>
+  <message name="_SetNewFormA_NEWOutput">
+    <part name="parameters" element="tns:_SetNewFormA_NEW_Response" />
+  </message>
+  <message name="GetSmilePointHistoryListInput">
+    <part name="parameters" element="tns:GetSmilePointHistoryList" />
+  </message>
+  <message name="GetSmilePointHistoryListOutput">
+    <part name="parameters" element="tns:GetSmilePointHistoryList_Response" />
+  </message>
+  <message name="SetBookSmileActivity_NEWInput">
+    <part name="parameters" element="tns:SetBookSmileActivity_NEW" />
+  </message>
+  <message name="SetBookSmileActivity_NEWOutput">
+    <part name="parameters" element="tns:SetBookSmileActivity_NEW_Response" />
+  </message>
+  <message name="SetRejectFormAInput">
+    <part name="parameters" element="tns:SetRejectFormA" />
+  </message>
+  <message name="SetRejectFormAOutput">
+    <part name="parameters" element="tns:SetRejectFormA_Response" />
+  </message>
+  <message name="CheckValidCardInput">
+    <part name="parameters" element="tns:CheckValidCard" />
+  </message>
+  <message name="CheckValidCardOutput">
+    <part name="parameters" element="tns:CheckValidCard_Response" />
+  </message>
+  <message name="SetTaxInvoiceOnlineByPolicyNumberInput">
+    <part name="parameters" element="tns:SetTaxInvoiceOnlineByPolicyNumber" />
+  </message>
+  <message name="SetTaxInvoiceOnlineByPolicyNumberOutput">
+    <part name="parameters" element="tns:SetTaxInvoiceOnlineByPolicyNumber_Response" />
+  </message>
+  <message name="SetLockSmilePasswordInput">
+    <part name="parameters" element="tns:SetLockSmilePassword" />
+  </message>
+  <message name="SetLockSmilePasswordOutput">
+    <part name="parameters" element="tns:SetLockSmilePassword_Response" />
+  </message>
+  <message name="GetAllSmileActivityList_NEWInput">
+    <part name="parameters" element="tns:GetAllSmileActivityList_NEW" />
+  </message>
+  <message name="GetAllSmileActivityList_NEWOutput">
+    <part name="parameters" element="tns:GetAllSmileActivityList_NEW_Response" />
+  </message>
+  <message name="SetFormADocInput">
+    <part name="parameters" element="tns:SetFormADoc" />
+  </message>
+  <message name="SetFormADocOutput">
+    <part name="parameters" element="tns:SetFormADoc_Response" />
+  </message>
+  <message name="SetNewFormAInput">
+    <part name="parameters" element="tns:SetNewFormA" />
+  </message>
+  <message name="SetNewFormAOutput">
+    <part name="parameters" element="tns:SetNewFormA_Response" />
+  </message>
+  <message name="CheckBookSmileActivity_NEWInput">
+    <part name="parameters" element="tns:CheckBookSmileActivity_NEW" />
+  </message>
+  <message name="CheckBookSmileActivity_NEWOutput">
+    <part name="parameters" element="tns:CheckBookSmileActivity_NEW_Response" />
+  </message>
+  <message name="SetRejectReasonFormAInput">
+    <part name="parameters" element="tns:SetRejectReasonFormA" />
+  </message>
+  <message name="SetRejectReasonFormAOutput">
+    <part name="parameters" element="tns:SetRejectReasonFormA_Response" />
+  </message>
+  <message name="GetSmileActivityListInput">
+    <part name="parameters" element="tns:GetSmileActivityList" />
+  </message>
+  <message name="GetSmileActivityListOutput">
+    <part name="parameters" element="tns:GetSmileActivityList_Response" />
+  </message>
+  <message name="ResetSmilePasswordInput">
+    <part name="parameters" element="tns:ResetSmilePassword" />
+  </message>
+  <message name="ResetSmilePasswordOutput">
+    <part name="parameters" element="tns:ResetSmilePassword_Response" />
+  </message>
+  <message name="SetDeleteFormAInput">
+    <part name="parameters" element="tns:SetDeleteFormA" />
+  </message>
+  <message name="SetDeleteFormAOutput">
+    <part name="parameters" element="tns:SetDeleteFormA_Response" />
+  </message>
+  <message name="CheckBookSmileActivityInput">
+    <part name="parameters" element="tns:CheckBookSmileActivity" />
+  </message>
+  <message name="CheckBookSmileActivityOutput">
+    <part name="parameters" element="tns:CheckBookSmileActivity_Response" />
+  </message>
+  <portType name="WS_Admin_ForSmartCardPortType">
+    <operation name="SetInvoiceRerunByPolicyNumber">
+      <input message="tns:SetInvoiceRerunByPolicyNumberInput" />
+      <output message="tns:SetInvoiceRerunByPolicyNumberOutput" />
+    </operation>
+    <operation name="SetNewSmilePassword">
+      <input message="tns:SetNewSmilePasswordInput" />
+      <output message="tns:SetNewSmilePasswordOutput" />
+    </operation>
+    <operation name="SetBookSmileActivity">
+      <input message="tns:SetBookSmileActivityInput" />
+      <output message="tns:SetBookSmileActivityOutput" />
+    </operation>
+    <operation name="GetAllSmileActivityList">
+      <input message="tns:GetAllSmileActivityListInput" />
+      <output message="tns:GetAllSmileActivityListOutput" />
+    </operation>
+    <operation name="CheckSmilePassword">
+      <input message="tns:CheckSmilePasswordInput" />
+      <output message="tns:CheckSmilePasswordOutput" />
+    </operation>
+    <operation name="SetUnlockSmilePassword">
+      <input message="tns:SetUnlockSmilePasswordInput" />
+      <output message="tns:SetUnlockSmilePasswordOutput" />
+    </operation>
+    <operation name="GetSmileBranchList">
+      <input message="tns:GetSmileBranchListInput" />
+      <output message="tns:GetSmileBranchListOutput" />
+    </operation>
+    <operation name="_SetNewFormA_NEW">
+      <input message="tns:_SetNewFormA_NEWInput" />
+      <output message="tns:_SetNewFormA_NEWOutput" />
+    </operation>
+    <operation name="GetSmilePointHistoryList">
+      <input message="tns:GetSmilePointHistoryListInput" />
+      <output message="tns:GetSmilePointHistoryListOutput" />
+    </operation>
+    <operation name="SetBookSmileActivity_NEW">
+      <input message="tns:SetBookSmileActivity_NEWInput" />
+      <output message="tns:SetBookSmileActivity_NEWOutput" />
+    </operation>
+    <operation name="SetRejectFormA">
+      <input message="tns:SetRejectFormAInput" />
+      <output message="tns:SetRejectFormAOutput" />
+    </operation>
+    <operation name="CheckValidCard">
+      <input message="tns:CheckValidCardInput" />
+      <output message="tns:CheckValidCardOutput" />
+    </operation>
+    <operation name="SetTaxInvoiceOnlineByPolicyNumber">
+      <input message="tns:SetTaxInvoiceOnlineByPolicyNumberInput" />
+      <output message="tns:SetTaxInvoiceOnlineByPolicyNumberOutput" />
+    </operation>
+    <operation name="SetLockSmilePassword">
+      <input message="tns:SetLockSmilePasswordInput" />
+      <output message="tns:SetLockSmilePasswordOutput" />
+    </operation>
+    <operation name="GetAllSmileActivityList_NEW">
+      <input message="tns:GetAllSmileActivityList_NEWInput" />
+      <output message="tns:GetAllSmileActivityList_NEWOutput" />
+    </operation>
+    <operation name="SetFormADoc">
+      <input message="tns:SetFormADocInput" />
+      <output message="tns:SetFormADocOutput" />
+    </operation>
+    <operation name="SetNewFormA">
+      <input message="tns:SetNewFormAInput" />
+      <output message="tns:SetNewFormAOutput" />
+    </operation>
+    <operation name="CheckBookSmileActivity_NEW">
+      <input message="tns:CheckBookSmileActivity_NEWInput" />
+      <output message="tns:CheckBookSmileActivity_NEWOutput" />
+    </operation>
+    <operation name="SetRejectReasonFormA">
+      <input message="tns:SetRejectReasonFormAInput" />
+      <output message="tns:SetRejectReasonFormAOutput" />
+    </operation>
+    <operation name="GetSmileActivityList">
+      <input message="tns:GetSmileActivityListInput" />
+      <output message="tns:GetSmileActivityListOutput" />
+    </operation>
+    <operation name="ResetSmilePassword">
+      <input message="tns:ResetSmilePasswordInput" />
+      <output message="tns:ResetSmilePasswordOutput" />
+    </operation>
+    <operation name="SetDeleteFormA">
+      <input message="tns:SetDeleteFormAInput" />
+      <output message="tns:SetDeleteFormAOutput" />
+    </operation>
+    <operation name="CheckBookSmileActivity">
+      <input message="tns:CheckBookSmileActivityInput" />
+      <output message="tns:CheckBookSmileActivityOutput" />
+    </operation>
+  </portType>
+  <binding name="WS_Admin_ForSmartCardSoapBinding" type="tns:WS_Admin_ForSmartCardPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SetInvoiceRerunByPolicyNumber">
+      <soap:operation soapAction="http://tempuri.org/SetInvoiceRerunByPolicyNumber" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetNewSmilePassword">
+      <soap:operation soapAction="http://tempuri.org/SetNewSmilePassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetBookSmileActivity">
+      <soap:operation soapAction="http://tempuri.org/SetBookSmileActivity" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllSmileActivityList">
+      <soap:operation soapAction="http://tempuri.org/GetAllSmileActivityList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckSmilePassword">
+      <soap:operation soapAction="http://tempuri.org/CheckSmilePassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetUnlockSmilePassword">
+      <soap:operation soapAction="http://tempuri.org/SetUnlockSmilePassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSmileBranchList">
+      <soap:operation soapAction="http://tempuri.org/GetSmileBranchList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="_SetNewFormA_NEW">
+      <soap:operation soapAction="http://tempuri.org/_SetNewFormA_NEW" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSmilePointHistoryList">
+      <soap:operation soapAction="http://tempuri.org/GetSmilePointHistoryList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetBookSmileActivity_NEW">
+      <soap:operation soapAction="http://tempuri.org/SetBookSmileActivity_NEW" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetRejectFormA">
+      <soap:operation soapAction="http://tempuri.org/SetRejectFormA" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckValidCard">
+      <soap:operation soapAction="http://tempuri.org/CheckValidCard" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetTaxInvoiceOnlineByPolicyNumber">
+      <soap:operation soapAction="http://tempuri.org/SetTaxInvoiceOnlineByPolicyNumber" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetLockSmilePassword">
+      <soap:operation soapAction="http://tempuri.org/SetLockSmilePassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllSmileActivityList_NEW">
+      <soap:operation soapAction="http://tempuri.org/GetAllSmileActivityList_NEW" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetFormADoc">
+      <soap:operation soapAction="http://tempuri.org/SetFormADoc" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetNewFormA">
+      <soap:operation soapAction="http://tempuri.org/SetNewFormA" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckBookSmileActivity_NEW">
+      <soap:operation soapAction="http://tempuri.org/CheckBookSmileActivity_NEW" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetRejectReasonFormA">
+      <soap:operation soapAction="http://tempuri.org/SetRejectReasonFormA" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSmileActivityList">
+      <soap:operation soapAction="http://tempuri.org/GetSmileActivityList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ResetSmilePassword">
+      <soap:operation soapAction="http://tempuri.org/ResetSmilePassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SetDeleteFormA">
+      <soap:operation soapAction="http://tempuri.org/SetDeleteFormA" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckBookSmileActivity">
+      <soap:operation soapAction="http://tempuri.org/CheckBookSmileActivity" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WS_Admin_ForSmartCardService">
+    <documentation>WSDL for SmartCard project</documentation>
+    <port name="WS_Admin_ForSmartCardPort" binding="tns:WS_Admin_ForSmartCardSoapBinding">
+      <soap:address location="http://10.1.0.24:2380/applinx/wrapped-service/WS_Admin_SmileService/WS_Admin_ForSmartCard" />
+    </port>
+  </service>
+</definitions>

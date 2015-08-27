@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://muangthai/eapp/as400/xsd/ValidateRecipeNumberForAll" elementFormDefault="qualified" targetNamespace="http://muangthai/eapp/as400/xsd/ValidateRecipeNumberForAll" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="Request">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="businessDate" type="dateTime" />
+        <element minOccurs="1" maxOccurs="1" name="recipeNumber" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="agentNumber" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="applicationNumber" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="Response">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="responseCode" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="isValid" type="boolean" />
+        <element minOccurs="1" maxOccurs="1" name="reasonCode" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="resultCase" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="eappFoundCurrentYear" type="boolean" />
+        <element minOccurs="1" maxOccurs="1" name="applicationStatus" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="eSignatureState" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="description" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

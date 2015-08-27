@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://muangthai.co.th/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://muangthai.co.th/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://muangthai.co.th/">
+      <s:element name="CheckPartnerAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPartnerAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPartnerAuthenticationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPartnerAuthenticationReturnDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPartnerAuthenticationReturnDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPartnerAuthenticationReturnDetailResult" type="tns:CheckPartnerAuthentication_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckPartnerAuthentication_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Project" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckPartnerAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPartnerAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckPartnerAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPartnerAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPartnerAuthenticationReturnDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPartnerAuthenticationReturnDetail" />
+  </wsdl:message>
+  <wsdl:message name="CheckPartnerAuthenticationReturnDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPartnerAuthenticationReturnDetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ForPartnerAuthenticationCheckingSoap">
+    <wsdl:operation name="CheckPartnerAuthentication">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">สำหรับใช้พิสูจน์ตัวตนพันธมิตรที่มีสิทธิใช้ Web Services</wsdl:documentation>
+      <wsdl:input message="tns:CheckPartnerAuthenticationSoapIn" />
+      <wsdl:output message="tns:CheckPartnerAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPartnerAuthenticationReturnDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">สำหรับใช้พิสูจน์ตัวตนพันธมิตรที่มีสิทธิใช้ Web Services</wsdl:documentation>
+      <wsdl:input message="tns:CheckPartnerAuthenticationReturnDetailSoapIn" />
+      <wsdl:output message="tns:CheckPartnerAuthenticationReturnDetailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ForPartnerAuthenticationCheckingSoap" type="tns:ForPartnerAuthenticationCheckingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckPartnerAuthentication">
+      <soap:operation soapAction="http://muangthai.co.th/CheckPartnerAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPartnerAuthenticationReturnDetail">
+      <soap:operation soapAction="http://muangthai.co.th/CheckPartnerAuthenticationReturnDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ForPartnerAuthenticationCheckingSoap12" type="tns:ForPartnerAuthenticationCheckingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckPartnerAuthentication">
+      <soap12:operation soapAction="http://muangthai.co.th/CheckPartnerAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPartnerAuthenticationReturnDetail">
+      <soap12:operation soapAction="http://muangthai.co.th/CheckPartnerAuthenticationReturnDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ForPartnerAuthenticationChecking">
+    <wsdl:port name="ForPartnerAuthenticationCheckingSoap" binding="tns:ForPartnerAuthenticationCheckingSoap">
+      <soap:address location="http://localhost/_MTLNETWebServicesPAC/ForPartnerAuthenticationChecking.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ForPartnerAuthenticationCheckingSoap12" binding="tns:ForPartnerAuthenticationCheckingSoap12">
+      <soap12:address location="http://localhost/_MTLNETWebServicesPAC/ForPartnerAuthenticationChecking.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

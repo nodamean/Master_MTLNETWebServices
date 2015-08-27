@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://eapp/muangthai/Service/ValidateCCPPayment" elementFormDefault="qualified" targetNamespace="http://eapp/muangthai/Service/ValidateCCPPayment" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="Request">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="tempolaryReceiptNumber" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="Response">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="result" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="reasonCode" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="reasonText" type="string" />
+        <element minOccurs="0" maxOccurs="unbounded" name="applicationDetail">
+          <complexType>
+            <sequence>
+              <element minOccurs="1" maxOccurs="1" name="tempolaryReceiptNumber" type="string" />
+              <element minOccurs="1" maxOccurs="1" name="applicationNumber" type="string" />
+              <element minOccurs="1" maxOccurs="1" name="assureName" type="string" />
+              <element minOccurs="1" maxOccurs="1" name="assureLastname" type="string" />
+              <element minOccurs="1" maxOccurs="1" name="insured" type="decimal" />
+              <element minOccurs="1" maxOccurs="1" name="premium" type="decimal" />
+              <element minOccurs="1" maxOccurs="1" name="planCode" type="string" />
+              <element minOccurs="1" maxOccurs="1" name="planName" type="string" />
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

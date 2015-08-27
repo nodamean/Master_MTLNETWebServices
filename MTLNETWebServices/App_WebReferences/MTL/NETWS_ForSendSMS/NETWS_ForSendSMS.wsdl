@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendSMSNow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMSUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SMSPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSNowResult" type="tns:SMSSendNow_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SMSSendNow_Result">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSMSWithSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMSUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SMSPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Schedule" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSWithScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSWithScheduleResult" type="tns:SMSSendNow_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSMSNowSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSNow" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSNowSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSWithScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSWithSchedule" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSWithScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSWithScheduleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ForSendSMSSoap">
+    <wsdl:operation name="SendSMSNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">สำหรับใช้ส่ง SMS แบบทันที ผ่าน API ของ Net-Innova</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSNowSoapIn" />
+      <wsdl:output message="tns:SendSMSNowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSWithSchedule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">สำหรับใช้ส่ง SMS ที่ตั้งเวลาส่งแบบทันที ผ่าน API ของ Net-Innova</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSWithScheduleSoapIn" />
+      <wsdl:output message="tns:SendSMSWithScheduleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ForSendSMSSoap" type="tns:ForSendSMSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMSNow">
+      <soap:operation soapAction="http://tempuri.org/SendSMSNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSWithSchedule">
+      <soap:operation soapAction="http://tempuri.org/SendSMSWithSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ForSendSMSSoap12" type="tns:ForSendSMSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMSNow">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSWithSchedule">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSWithSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ForSendSMS">
+    <wsdl:port name="ForSendSMSSoap" binding="tns:ForSendSMSSoap">
+      <soap:address location="http://10.1.0.98/MTL_WebService/ForSendSMS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ForSendSMSSoap12" binding="tns:ForSendSMSSoap12">
+      <soap12:address location="http://10.1.0.98/MTL_WebService/ForSendSMS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

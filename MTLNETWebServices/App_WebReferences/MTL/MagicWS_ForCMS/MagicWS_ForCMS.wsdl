@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:magic.SOONTORN.MagicWS_ForCMS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:magic.SOONTORN.MagicWS_ForCMS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>
+WSDL Builder (Magic eDeveloper v9.4)
+Created by   : ---
+Created Date : 20/08/2008 Time :16:07:05
+</documentation>
+  <types />
+  <message name="GetAgentStatusChecking">
+    <part name="p_agent_number" type="xsd:string" />
+    <part name="p_agent_password" type="xsd:string" />
+  </message>
+  <message name="GetAgentStatusCheckingResponse">
+    <part name="p_result" type="xsd:string" />
+  </message>
+  <message name="GetAgentNumberSearchByLicense">
+    <part name="p_agent_license_number" type="xsd:string" />
+  </message>
+  <message name="GetAgentNumberSearchByLicenseResponse">
+    <part name="p_result" type="xsd:string" />
+    <part name="p_agent_number" type="xsd:string" />
+  </message>
+  <message name="GetSmileClubStatusChecking">
+    <part name="p_client_number" type="xsd:string" />
+    <part name="p_login_random_set" type="xsd:string" />
+    <part name="p_client_dob_D" type="xsd:string" />
+    <part name="p_client_dob_M" type="xsd:string" />
+    <part name="p_client_dob_Y" type="xsd:string" />
+    <part name="p_client_pid" type="xsd:string" />
+  </message>
+  <message name="GetSmileClubStatusCheckingResponse">
+    <part name="p_result" type="xsd:string" />
+    <part name="p_title" type="xsd:string" />
+    <part name="p_name" type="xsd:string" />
+    <part name="p_surname" type="xsd:string" />
+    <part name="p_gender" type="xsd:string" />
+    <part name="p_dob" type="xsd:string" />
+    <part name="p_pid" type="xsd:string" />
+    <part name="p_mobile_phone_number" type="xsd:string" />
+    <part name="p_business_phone_number" type="xsd:string" />
+    <part name="p_home_phone_number" type="xsd:string" />
+    <part name="p_email" type="xsd:string" />
+  </message>
+  <portType name="MagicWS_ForCMSPortType">
+    <operation name="GetAgentStatusChecking" parameterOrder="p_agent_number p_agent_password p_result">
+      <input message="tns:GetAgentStatusChecking" />
+      <output message="tns:GetAgentStatusCheckingResponse" />
+    </operation>
+    <operation name="GetAgentNumberSearchByLicense" parameterOrder="p_agent_license_number p_result p_agent_number">
+      <input message="tns:GetAgentNumberSearchByLicense" />
+      <output message="tns:GetAgentNumberSearchByLicenseResponse" />
+    </operation>
+    <operation name="GetSmileClubStatusChecking" parameterOrder="p_client_number p_login_random_set p_client_dob_D p_client_dob_M p_client_dob_Y p_client_pid p_result p_title p_name p_surname p_gender p_dob p_pid p_mobile_phone_number p_business_phone_number p_home_phone_number p_email">
+      <input message="tns:GetSmileClubStatusChecking" />
+      <output message="tns:GetSmileClubStatusCheckingResponse" />
+    </operation>
+  </portType>
+  <binding name="MagicWS_ForCMSBinding" type="tns:MagicWS_ForCMSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetAgentStatusChecking">
+      <documentation>
+      </documentation>
+      <soap:operation soapAction="13C23302F2D2F2E6F69647163696C6070714F53554349465255435F5245475A3360727" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCMS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCMS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetAgentNumberSearchByLicense">
+      <documentation>
+      </documentation>
+      <soap:operation soapAction="13C2330213C22302F2D2F2E6F69647163696C6070714F53554349465255435F5245475A3360727" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCMS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCMS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSmileClubStatusChecking">
+      <documentation>
+      </documentation>
+      <soap:operation soapAction="13C273130213C263130213C253130213C243130213C233130213C223130213C213130213C203130213C2930213C2830213C27302F2D2F2E6F69647163696C6070714F53554349465255435F5245475A3360727" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCMS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCMS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MagicWS_ForCMS">
+    <documentation>
+    </documentation>
+    <port name="tns:MagicWS_ForCMSPortType" binding="tns:MagicWS_ForCMSBinding">
+      <soap:address location="http://SOONTORN/Magic94Scripts/MGRQISPI94.dll" />
+    </port>
+  </service>
+</definitions>

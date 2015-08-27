@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:element name="CheckAgentOwnerPolicy">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckAgentOwnerPolicy_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_belong_to_agent" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_face_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_plan_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_plan_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_premium" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckAgentAuthentication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckAgentAuthentication_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_department" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_position" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_type" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="CheckAgentOwnerPolicyInput">
+    <part name="parameters" element="tns:CheckAgentOwnerPolicy" />
+  </message>
+  <message name="CheckAgentOwnerPolicyOutput">
+    <part name="parameters" element="tns:CheckAgentOwnerPolicy_Response" />
+  </message>
+  <message name="CheckAgentAuthenticationInput">
+    <part name="parameters" element="tns:CheckAgentAuthentication" />
+  </message>
+  <message name="CheckAgentAuthenticationOutput">
+    <part name="parameters" element="tns:CheckAgentAuthentication_Response" />
+  </message>
+  <portType name="WS_Agent_ForMPosPortType">
+    <operation name="CheckAgentOwnerPolicy">
+      <input message="tns:CheckAgentOwnerPolicyInput" />
+      <output message="tns:CheckAgentOwnerPolicyOutput" />
+    </operation>
+    <operation name="CheckAgentAuthentication">
+      <input message="tns:CheckAgentAuthenticationInput" />
+      <output message="tns:CheckAgentAuthenticationOutput" />
+    </operation>
+  </portType>
+  <binding name="WS_Agent_ForMPosSoapBinding" type="tns:WS_Agent_ForMPosPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CheckAgentOwnerPolicy">
+      <soap:operation soapAction="http://tempuri.org/CheckAgentOwnerPolicy" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckAgentAuthentication">
+      <soap:operation soapAction="http://tempuri.org/CheckAgentAuthentication" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WS_Agent_ForMPosService">
+    <documentation>WSDL for MPos</documentation>
+    <port name="WS_Agent_ForMPosPort" binding="tns:WS_Agent_ForMPosSoapBinding">
+      <soap:address location="http://10.1.0.24:2380/applinx/wrapped-service/WS_Agent/WS_Agent_ForMPos" />
+    </port>
+  </service>
+</definitions>

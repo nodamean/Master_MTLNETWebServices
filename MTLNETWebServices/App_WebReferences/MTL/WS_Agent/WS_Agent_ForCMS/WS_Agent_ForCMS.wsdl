@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <xsd:complexType name="CPINQ014_detail_PolicyList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="policy_number" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="client_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="app_date" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="eff_date" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="apv_date" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="due_date" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sum_insured" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="premium" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="payment_type" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CPINQ02C_F6_PolicyList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="option" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="policy_number" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="policy_status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="client_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="client_surname" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="client_number" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CPINQ02_PolicyRiderList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="option" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="plan_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="premium" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="extra_premium" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="total_premium" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SetAgentChangePassword">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_new_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_confirm_agent_new_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetAgentChangePassword_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getUserAuthentication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getUserAuthentication_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_type" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_dept" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_pos" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAPD_S">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agno" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_level" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_from" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_to" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAPD_S_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_cancellation_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_firstyear_premium_next_tranche" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_fyp_net" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_remark" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sum_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sum_firstyear_premium_next_tranche" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sum_insured" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_from_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_to_date" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckAgentAuthentication">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CheckAgentAuthentication_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_result" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_department" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_position" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_type" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPolicyListByName">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agno" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_name" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPolicyListByName_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_policy_list" type="tns:CPINQ014_detail_PolicyList" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_policy_filtered_list" type="tns:CPINQ014_detail_PolicyList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPolicyDetail">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPolicyDetail_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_approve_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_attained_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_belong_to_agent" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_billed_to_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_address" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_dob" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_coverage_period" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_disability_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_dividend_method" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_extra_paid_period" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_extra_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_face_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_issue_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_paid_by" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_last_paid_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_luanch_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_maturity_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_next_paid_age" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_owner_agent" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_paid_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_paid_mode" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_paid_period" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_payor" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_plan_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_plan_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_rate_age" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_rider_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sale_department" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_service_agent" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_tranche_billed_to" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_tranche_paid" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_year_billed_to" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_year_paid" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f2_mode_01" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f2_mode_03" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f2_mode_06" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f2_mode_12" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_address1" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_address2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_business_phone" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_client_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_face_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_mobile_phone" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_policy_status" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_resident_phone" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_responsible_team" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f4_sum_insured" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f5_misc_susp_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f5_misc_susp_value" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f5_prem_susp_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f5_prem_susp_value" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_f6_policy_list" type="tns:CPINQ02C_F6_PolicyList" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f7_assurance_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f7_hazard_health" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f7_hazard_occupation" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f7_health_check_code" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_disability_extra_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_disability_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_disability_total_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_life_extra_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_life_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_life_total_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_sum_extra_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_sum_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_sum_total_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_tranche" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_f8_year" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="fld_f8_policy_rider_list" type="tns:CPINQ02_PolicyRiderList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAPD_O">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agno" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_level" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_from" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_to" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAPD_O_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_firstyear_premium_next_tranche" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_inforce_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_inforce_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_inforce_sum_insured" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_no_inforce_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_no_inforce_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_no_inforce_sum_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_no_inforce_sum_insured" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_remark" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sum_firstyear_premium_next_tranche" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_amount" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_sum_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_total_sum_insured" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_inforce_sum_first_tranche_premium" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_from_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_to_date" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPolicyCashValue">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_agent_password" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_in_policy_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_in_date" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPolicyCashValue_Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_errmsg" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_sessionID" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_client_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_plan_name" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_contract_start_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_apl" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_apl_interest" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_apl_interest_2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_cash_value_present" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_date" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_dividend" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_loan_interest" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_loan_interest_2" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_loan_value" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_loan_value_net" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_policy_number" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_premium_outof_payment" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_surrender_value_net" type="xsd:string" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="fld_year" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="SetAgentChangePasswordInput">
+    <part name="parameters" element="tns:SetAgentChangePassword" />
+  </message>
+  <message name="SetAgentChangePasswordOutput">
+    <part name="parameters" element="tns:SetAgentChangePassword_Response" />
+  </message>
+  <message name="getUserAuthenticationInput">
+    <part name="parameters" element="tns:getUserAuthentication" />
+  </message>
+  <message name="getUserAuthenticationOutput">
+    <part name="parameters" element="tns:getUserAuthentication_Response" />
+  </message>
+  <message name="getAPD_SInput">
+    <part name="parameters" element="tns:getAPD_S" />
+  </message>
+  <message name="getAPD_SOutput">
+    <part name="parameters" element="tns:getAPD_S_Response" />
+  </message>
+  <message name="CheckAgentAuthenticationInput">
+    <part name="parameters" element="tns:CheckAgentAuthentication" />
+  </message>
+  <message name="CheckAgentAuthenticationOutput">
+    <part name="parameters" element="tns:CheckAgentAuthentication_Response" />
+  </message>
+  <message name="getPolicyListByNameInput">
+    <part name="parameters" element="tns:getPolicyListByName" />
+  </message>
+  <message name="getPolicyListByNameOutput">
+    <part name="parameters" element="tns:getPolicyListByName_Response" />
+  </message>
+  <message name="getPolicyDetailInput">
+    <part name="parameters" element="tns:getPolicyDetail" />
+  </message>
+  <message name="getPolicyDetailOutput">
+    <part name="parameters" element="tns:getPolicyDetail_Response" />
+  </message>
+  <message name="getAPD_OInput">
+    <part name="parameters" element="tns:getAPD_O" />
+  </message>
+  <message name="getAPD_OOutput">
+    <part name="parameters" element="tns:getAPD_O_Response" />
+  </message>
+  <message name="getPolicyCashValueInput">
+    <part name="parameters" element="tns:getPolicyCashValue" />
+  </message>
+  <message name="getPolicyCashValueOutput">
+    <part name="parameters" element="tns:getPolicyCashValue_Response" />
+  </message>
+  <portType name="WS_Agent_ForCMSPortType">
+    <operation name="SetAgentChangePassword">
+      <input message="tns:SetAgentChangePasswordInput" />
+      <output message="tns:SetAgentChangePasswordOutput" />
+    </operation>
+    <operation name="getUserAuthentication">
+      <input message="tns:getUserAuthenticationInput" />
+      <output message="tns:getUserAuthenticationOutput" />
+    </operation>
+    <operation name="getAPD_S">
+      <input message="tns:getAPD_SInput" />
+      <output message="tns:getAPD_SOutput" />
+    </operation>
+    <operation name="CheckAgentAuthentication">
+      <input message="tns:CheckAgentAuthenticationInput" />
+      <output message="tns:CheckAgentAuthenticationOutput" />
+    </operation>
+    <operation name="getPolicyListByName">
+      <input message="tns:getPolicyListByNameInput" />
+      <output message="tns:getPolicyListByNameOutput" />
+    </operation>
+    <operation name="getPolicyDetail">
+      <input message="tns:getPolicyDetailInput" />
+      <output message="tns:getPolicyDetailOutput" />
+    </operation>
+    <operation name="getAPD_O">
+      <input message="tns:getAPD_OInput" />
+      <output message="tns:getAPD_OOutput" />
+    </operation>
+    <operation name="getPolicyCashValue">
+      <input message="tns:getPolicyCashValueInput" />
+      <output message="tns:getPolicyCashValueOutput" />
+    </operation>
+  </portType>
+  <binding name="WS_Agent_ForCMSSoapBinding" type="tns:WS_Agent_ForCMSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SetAgentChangePassword">
+      <soap:operation soapAction="http://tempuri.org/SetAgentChangePassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getUserAuthentication">
+      <soap:operation soapAction="http://tempuri.org/getUserAuthentication" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAPD_S">
+      <soap:operation soapAction="http://tempuri.org/getAPD_S" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckAgentAuthentication">
+      <soap:operation soapAction="http://tempuri.org/CheckAgentAuthentication" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPolicyListByName">
+      <soap:operation soapAction="http://tempuri.org/getPolicyListByName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPolicyDetail">
+      <soap:operation soapAction="http://tempuri.org/getPolicyDetail" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAPD_O">
+      <soap:operation soapAction="http://tempuri.org/getAPD_O" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPolicyCashValue">
+      <soap:operation soapAction="http://tempuri.org/getPolicyCashValue" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WS_Agent_ForCMSService">
+    <documentation>WSDL for CMS (DNN : Web Site)</documentation>
+    <port name="WS_Agent_ForCMSPort" binding="tns:WS_Agent_ForCMSSoapBinding">
+      <soap:address location="http://10.1.0.24:2380/applinx/wrapped-service/WS_Agent/WS_Agent_ForCMS" />
+    </port>
+  </service>
+</definitions>

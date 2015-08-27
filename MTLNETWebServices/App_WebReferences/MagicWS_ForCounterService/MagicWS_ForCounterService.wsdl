@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:magic.SOONTORN.MagicWS_ForCounterService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:magic.SOONTORN.MagicWS_ForCounterService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>
+WSDL Builder (Magic eDeveloper v9.4)
+Created by   : ---
+Created Date : 18/05/2011 Time :13:59:37
+</documentation>
+  <types />
+  <message name="GetTransactionByOTP">
+    <part name="p_PIN" type="xsd:string" />
+    <part name="p_OTP" type="xsd:string" />
+  </message>
+  <message name="GetTransactionByOTPResponse">
+    <part name="Result" type="xsd:string" />
+    <part name="ClientNumber" type="xsd:string" />
+    <part name="PolicyNumber" type="xsd:string" />
+    <part name="VoucherNumber" type="xsd:string" />
+    <part name="ClaimNumber" type="xsd:string" />
+    <part name="ClaimDate" type="xsd:string" />
+    <part name="MobileNumber" type="xsd:string" />
+    <part name="Status" type="xsd:string" />
+  </message>
+  <message name="GetTransactionsList">
+    <part name="p_Status" type="xsd:string" />
+  </message>
+  <message name="GetTransactionsListResponse">
+    <part name="Result" type="xsd:string" />
+    <part name="ResultList" type="xsd:string" />
+  </message>
+  <portType name="MagicWS_ForCounterServicePortType">
+    <operation name="GetTransactionByOTP" parameterOrder="p_PIN p_OTP Result ClientNumber PolicyNumber VoucherNumber ClaimNumber ClaimDate MobileNumber Status">
+      <input message="tns:GetTransactionByOTP" />
+      <output message="tns:GetTransactionByOTPResponse" />
+    </operation>
+    <operation name="GetTransactionsList" parameterOrder="p_Status Result ResultList">
+      <input message="tns:GetTransactionsList" />
+      <output message="tns:GetTransactionsListResponse" />
+    </operation>
+  </portType>
+  <binding name="MagicWS_ForCounterServiceBinding" type="tns:MagicWS_ForCounterServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetTransactionByOTP">
+      <documentation>
+      </documentation>
+      <soap:operation soapAction="13C203130213C2930213C2830213C2730213C2630213C2530213C2430213C23302F2D2F2E6F69647163696C6070714F53534A3360727" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCounterService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCounterService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetTransactionsList">
+      <documentation>
+      </documentation>
+      <soap:operation soapAction="13C2330213C22302F2D2F2E6F69647163696C6070714F53534A3360727" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCounterService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:magic.SOONTORN.MagicWS_ForCounterService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MagicWS_ForCounterService">
+    <documentation>MagicWS ForCounterService</documentation>
+    <port name="tns:MagicWS_ForCounterServicePortType" binding="tns:MagicWS_ForCounterServiceBinding">
+      <soap:address location="http://SOONTHANA/Magic94Scripts/MGRQISPI94.dll" />
+    </port>
+  </service>
+</definitions>

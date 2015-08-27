@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N0:definitions xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N2="http://www.example.org/ValidateRecipeNumber/" xmlns:WL5G3N1="http://muangthai/eapp/as400/xsd/ValidateRecipeNumber" name="ValidateRecipeNumber" targetNamespace="http://www.example.org/ValidateRecipeNumber/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:tns="http://www.example.org/ValidateRecipeNumber/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd1="http://muangthai/eapp/as400/xsd/ValidateRecipeNumber" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.example.org/ValidateRecipeNumber/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+    <xsd:schema xmlns:tns="http://www.example.org/ValidateRecipeNumber/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd1="http://muangthai/eapp/as400/xsd/ValidateRecipeNumber" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="http://mtowuat:8011/EAppService/AS400/ProxyServices/ValidateRecipeNumber_PS?SCHEMA%2FEAppService%2FAS400%2FResources%2FWSDL%2FXSD%2FValidateRecipeNumber" namespace="http://muangthai/eapp/as400/xsd/ValidateRecipeNumber" />
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ValidateRecipeNumberRequest">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:Request" />
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ValidateRecipeNumberResponse">
+    <WL5G3N0:part name="parameters" element="WL5G3N1:Response" />
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ValidateRecipeNumber">
+    <WL5G3N0:operation name="ValidateRecipeNumber">
+      <WL5G3N0:input message="WL5G3N2:ValidateRecipeNumberRequest" />
+      <WL5G3N0:output message="WL5G3N2:ValidateRecipeNumberResponse" />
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ValidateRecipeNumberSOAP" type="WL5G3N2:ValidateRecipeNumber">
+    <WL5G3N3:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N0:operation name="ValidateRecipeNumber">
+      <WL5G3N3:operation soapAction="http://www.example.org/ValidateRecipeNumber/ValidateRecipeNumber" />
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal" />
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal" />
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="ValidateRecipeNumber">
+    <WL5G3N0:port name="ValidateRecipeNumberSOAP" binding="WL5G3N2:ValidateRecipeNumberSOAP">
+      <WL5G3N3:address location="http://MTOWOSBU2:8011/EAppService/AS400/ProxyServices/ValidateRecipeNumber_PS" />
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>
