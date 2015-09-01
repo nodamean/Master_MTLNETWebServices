@@ -180,12 +180,68 @@ public class NETWS_ForMTLSmileService : System.Web.Services.WebService {
         public string PolicyStatus;
         //public string IssueDate;
         public string WarningMessage;
-        //----APL----
+    }
+    protected class ApplinXgetPolicyCashValueResult
+    {
+        public string fld_result;
+        public string fld_errmsg;
+        public string fld_sessionID;
+        public string fld_client_name;
+        public string fld_plan_name;
+        public string fld_contract_start_date;
+        public string fld_apl;
+        public string fld_apl_interest;
+        public string fld_apl_interest_2;
+        public string fld_cash_value_present;
+        public string fld_date;
+        public string fld_dividend;
+        public string fld_loan_interest;
+        public string fld_loan_interest_2;
+        public string fld_loan_value;
+        public string fld_loan_value_net;
+        public string fld_policy_number;
+        public string fld_premium_outof_payment;
+        public string fld_surrender_value_net;
+        public string fld_year;
+
+    }
+    public class GetPolicyAPLForPayment_Result
+    {
+        public string Result;
+        public string SessionID;
+        public string PolicyNumber;
+        public string PlanName;
+        public string APLAmount;
+        public string PaymentTypeToPay;
+    }
+
+    public class GetPolicyLoanForPayment_Result
+    {
+        public string Result;
+        public string SessionID;
+        public string PolicyNumber;
+        public string PlanName;
+        public string LoanAmount;
+        public string PaymentTypeToPay;
+    }
+    public enum DateInterval
+    {
+        Day,
+        DayOfYear,
+        Hour,
+        Minute,
+        Month,
+        Quarter,
+        Second,
+        Weekday,
+        WeekOfYear,
+        Year
     }
     protected class PremiumDetail_Result
     {
        
     }
+    #region รายละเอียดกรมธรรม์
     [WebMethod(Description = "Method ใช้สำหรับแสดงรายละเอียดกรมธรรม์ที่พร้อมสำหรับการชำระเงินค่าเบี้ยประกันภัยต่ออายุ")]
     public GetPolicyDetailForPayment_Result GetPolicyDetailForPayment(string partnerUsername, string partnerPassword, string policyNumber)
     {
@@ -268,35 +324,45 @@ public class NETWS_ForMTLSmileService : System.Web.Services.WebService {
                                 obj.Result = "notcomplete_กรมธรรม์นี้ไม่รับชำระค่าเบี้ยประกันต่ออายุออนไลน์";
                         }
                         else
-                        { // ตรวจสอบเงื่อนไขวันกำหนดชำระ ไม่เกิน 31 วัน
+                        { // กรณีค้างจ่ายตรวจสอบเงื่อนไขวันกำหนดชำระ ไม่เกิน 31 วัน  
                             DateTime nextDue = Convert.ToDateTime(resAdminObj.fld_billed_to_date);
                             DateTime nextDue_2 = Convert.ToDateTime(resAdminObj.fld_billed_to_date).AddDays(31);
+                            DateTime paid_date = Convert.ToDateTime(resAdminObj.fld_paid_date);
+
+                            //กรณีจ่ายก่อนล่วงหน้างวด รับเงื่อนไขnextduedate -วันที่จ่าย <= ตามงวด(1ปี ,รายเดือน ,3เดือน ,6เดือน)
+                            long diff = DateDiff(DateInterval.Month, DateTime.Today, nextDue);
+                            long period = DateDiff(DateInterval.Month, paid_date, nextDue);
+
 
                             int compareValue = nextDue.CompareTo(DateTime.Today);
-                            if (compareValue < 0)
+                            if (compareValue < 0 )
                             {
-                                obj.Result = "notcomplete_กรมธรรม์นี้ไม่รับชำระค่าเบี้ยประกันต่ออายุออนไลน์1";
+                                obj.Result = "notcomplete_กรมธรรม์นี้ไม่รับชำระค่าเบี้ยประกันต่ออายุออนไลน์ เนื่องจากเกินกำหนดที่รับชำระ กรุณาชำระช่องทางอื่นๆ";
 
+                            }
+                            else if (diff > period)
+                            {
+                                obj.Result = "notcomplete_กรมธรรม์นี้ไม่รับชำระค่าเบี้ยประกันต่ออายุออนไลน์ เนื่องจากยังไม่ถึงกำหนดชำระ";
                             }
                             else 
                             {
                                 obj.TypePaid = "ชำระเบี้ยประกันภัย";
-                                // ตรวจสอบว่าเป็นกรมธรรม์ที่สามารถรับชำระด้วยวิธีการใดได้บ้าง
+                                // ตรวจสอบว่าเป็นกรมธรรม์ที่สามารถรับชำระด้วยวิธีการใดได้บ้าง  
                                 if (resAdminObj.fld_warning_message.Contains("อนุโลม"))
                                 {
                                     obj.PaymentTypeToPay = "CCP|CDC";
                                 }
                                 else if (resAdminObj.fld_warning_message.Contains("ไม่รับบัตรเครดิต"))
                                 {
-                                    obj.PaymentTypeToPay = "CCP";
+                                    obj.PaymentTypeToPay = "CCP"; 
                                 }
                                 else
                                 {
                                     obj.PaymentTypeToPay = "CCP|CDC";
                                 }
 
-                                // ตรวจสอบว่าเป็นกรมธรรม์ประเภท PA หรือไม่ (เลขกรมธรรม์ขึ้นต้นด้วย 8) ถ้าใช่จะต้องไปเอาค่าเบี้ยประกันรวมจากหน้าจอใบเสร็จ
-                                if (policyNumber.Trim().Substring(0, 1) == "8")
+                                // ตรวจสอบว่าเป็นกรมธรรม์ประเภท PA แบบรายเดือนหรือไม่ (เลขกรมธรรม์ขึ้นต้นด้วย 8) ถ้าใช่จะต้องไปเอาค่าเบี้ยประกันรวมจากหน้าจอใบเสร็จ
+                                if (policyNumber.Trim().Substring(0, 1) == "8" )
                                 {
                                     MTL.WS_Admin.WS_Admin_ForMTLmPOS.WS_Admin_ForMPosService adminWSObj_mPos = new MTL.WS_Admin.WS_Admin_ForMTLmPOS.WS_Admin_ForMPosService();
 
@@ -367,6 +433,259 @@ public class NETWS_ForMTLSmileService : System.Web.Services.WebService {
             logobj.AddWSLog(this.partnerName, this.ipaddress, "Response", this.webserviceName, methodName, obj.Result, this.refnum);
 
             return obj;
+        }
+    }
+    #endregion 
+    #region APL
+    [WebMethod(Description = "Method ใช้สำหรับใช้แสดงข้อมูลสิทธิ์ตามกรมธรรม์เงินกู้อัตโนมัติ(APL)พร้อมสำหรับการชำระเงินค่าเบี้ยประกันภัยต่ออายุ")]
+    public GetPolicyAPLForPayment_Result GetPolicyAPLForPayment(string partnerUsername, string partnerPassword, string policyNumber)
+    {
+        GetPolicyAPLForPayment_Result obj = new GetPolicyAPLForPayment_Result();
+        RefRunningTBBLL runningobj = new RefRunningTBBLL();
+        this.refnum = runningobj.AddRefRunningTBAndReturn();
+        WSLogBLL logobj = new WSLogBLL();
+        string methodName = "GetPolicyAPLForPayment";
+
+        try
+        {
+            if (partnerUsername == "" || partnerPassword == "" || policyNumber == "")
+            {
+                this.partnerName = partnerUsername;
+                // LogRequest: Insert Log Request
+                logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                obj.Result = "notcomplete_กรุณาระบุข้อมูลให้ครบถ้วน";
+            }
+            else if (policyNumber.Trim().Substring(0, 2) == "PA")
+            {
+                this.partnerName = partnerUsername;
+                // LogRequest: Insert Log Request
+                logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                obj.Result = "notcomplete_กรมธรรม์นี้ไม่มียอดเงินกู้อัตโนมัติ(APL)ให้ชำระ";
+            }
+            else if (policyNumber.Length != 10 || !MTL.Utils.ThisWeb.CheckIsNumeric(policyNumber))
+            {
+                this.partnerName = partnerUsername;
+                // LogRequest: Insert Log Request
+                logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+                obj.Result = "notcomplete_กรุณาระบุเลขกรมธรรม์ให้ถูกต้อง";
+            }
+            else
+            {
+                // พิสูจน์ตัวตนของพันธมิตรก่อนที่จะให้ใช้งานจริง
+                NETWS_ForPartnerAuthenticationChecking.CheckPartnerAuthentication_Result pacobj = CheckPartnerAuthenticationReturnDetail(partnerUsername, partnerPassword, this.ipaddress);
+                if (pacobj.Result.Trim().ToLower() == "passed")
+                {
+                    this.partnerName = pacobj.PartnerName;
+                    // LogRequest: Insert Log Request
+                    logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                    // ดึงข้อมูลรายละเอียดของกรมธรรม์กับ ApplinX WS_Admin
+                    ApplinXgetPolicyCashValueResult resAdminObj = new ApplinXgetPolicyCashValueResult();
+                    MTL.WS_Admin.WS_Admin_SmileServices.WS_Admin_ForSmartCardService adminWSObj = new MTL.WS_Admin.WS_Admin_SmileServices.WS_Admin_ForSmartCardService();
+                    resAdminObj.fld_errmsg = adminWSObj.getPolicyCashValue(this.admin_username, this.admin_password, policyNumber, "", out  resAdminObj.fld_sessionID, out resAdminObj.fld_client_name, out resAdminObj.fld_plan_name, out resAdminObj.fld_contract_start_date, out resAdminObj.fld_apl, out resAdminObj.fld_apl_interest, out resAdminObj.fld_apl_interest_2, out resAdminObj.fld_cash_value_present, out resAdminObj.fld_date, out resAdminObj.fld_dividend, out resAdminObj.fld_loan_interest, out resAdminObj.fld_loan_interest_2, out resAdminObj.fld_loan_value, out resAdminObj.fld_loan_value_net, out resAdminObj.fld_policy_number, out resAdminObj.fld_premium_outof_payment, out resAdminObj.fld_surrender_value_net, out resAdminObj.fld_year);
+
+                    if (resAdminObj.fld_errmsg.Trim().ToLower() == "หมายเลขกรมธรรม์ถูกต้อง")
+                    {
+                        if (resAdminObj.fld_apl_interest_2.Trim().ToLower() != ".00")
+                        {
+                            obj.Result = "completed";
+                            obj.SessionID = resAdminObj.fld_sessionID.Trim();
+                            obj.PolicyNumber = policyNumber;
+                            obj.PlanName = resAdminObj.fld_plan_name.Trim();
+                            obj.APLAmount = resAdminObj.fld_apl_interest_2.Trim();
+                            obj.PaymentTypeToPay    ="CCP"; //รับบัตรเดบิตเท่านั้น
+                            
+                        }
+                        else
+                        {
+                            obj.Result = "notcomplete_กรมธรรม์นี้ไม่มียอดเงินกู้อัตโนมัติ(APL)ให้ชำระ";
+
+                        }
+                    }
+                    else
+                    {
+                        obj.Result = "notcomplete_กรุณาระบุเลขกรมธรรม์ให้ถูกต้อง";
+                        
+                    }
+
+                }
+                else
+                {
+                    this.partnerName = pacobj.PartnerName;
+                    // LogRequest: Insert Log Request
+                    logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                    obj.Result = pacobj.Result.Trim().Replace("notpass_", "notcomplete_");
+                }
+
+            }
+            // LogResponse: Insert Log Response
+            logobj.AddWSLog(this.partnerName, this.ipaddress, "Response", this.webserviceName, methodName, obj.Result + "|"  + obj.PolicyNumber + "|" + "|" + obj.PlanName + "|" + obj.APLAmount + "|" + obj.PlanName + "|" + obj.PaymentTypeToPay + "|" + obj.SessionID, this.refnum);
+
+            return obj;
+
+        }
+        catch (Exception ex)
+        {
+            obj.Result = "notcomplete_" + ex.Message.ToString();
+
+            // LogResponse: Insert Log Response
+            logobj.AddWSLog(this.partnerName, this.ipaddress, "Response", this.webserviceName, methodName, obj.Result, this.refnum);
+
+            return obj;
+        }
+    }
+    #endregion
+
+    #region Loan
+    [WebMethod(Description = "Method ใช้สำหรับใช้แสดงข้อมูลเงินกู้ตามสิทธิ์กรมธรรม์(Loan)พร้อมสำหรับการชำระเงินค่าเบี้ยประกันภัยต่ออายุ")]
+    public GetPolicyLoanForPayment_Result GetPolicyLoanForPayment(string partnerUsername, string partnerPassword, string policyNumber)
+    {
+        GetPolicyLoanForPayment_Result obj = new GetPolicyLoanForPayment_Result();
+
+        RefRunningTBBLL runningobj = new RefRunningTBBLL();
+        this.refnum = runningobj.AddRefRunningTBAndReturn();
+        WSLogBLL logobj = new WSLogBLL();
+        string methodName = "GetPolicyLoanForPayment";
+
+        try
+        {
+            if (partnerUsername == "" || partnerPassword == "" || policyNumber == "")
+            {
+                this.partnerName = partnerUsername;
+                // LogRequest: Insert Log Request
+                logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                obj.Result = "notcomplete_กรุณาระบุข้อมูลให้ครบถ้วน";
+            }
+            else if (policyNumber.Trim().Substring(0, 2) == "PA")
+            {
+                this.partnerName = partnerUsername;
+                // LogRequest: Insert Log Request
+                logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                obj.Result = "notcomplete_กรมธรรม์นี้ไม่มีเงินกู้ตามสิทธิ์(Loan)ที่ต้องชำระ";
+            }
+            else if (policyNumber.Length != 10 || !MTL.Utils.ThisWeb.CheckIsNumeric(policyNumber))
+            {
+                this.partnerName = partnerUsername;
+                // LogRequest: Insert Log Request
+                logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+                obj.Result = "notcomplete_กรุณาระบุเลขกรมธรรม์ให้ถูกต้อง";
+            }
+            else
+            {
+                // พิสูจน์ตัวตนของพันธมิตรก่อนที่จะให้ใช้งานจริง
+                NETWS_ForPartnerAuthenticationChecking.CheckPartnerAuthentication_Result pacobj = CheckPartnerAuthenticationReturnDetail(partnerUsername, partnerPassword, this.ipaddress);
+                if (pacobj.Result.Trim().ToLower() == "passed")
+                {
+                    this.partnerName = pacobj.PartnerName;
+                    // LogRequest: Insert Log Request
+                    logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                    // ดึงข้อมูลรายละเอียดของกรมธรรม์กับ ApplinX WS_Admin
+                    ApplinXgetPolicyCashValueResult resAdminObj = new ApplinXgetPolicyCashValueResult();
+                    MTL.WS_Admin.WS_Admin_SmileServices.WS_Admin_ForSmartCardService adminWSObj = new MTL.WS_Admin.WS_Admin_SmileServices.WS_Admin_ForSmartCardService();
+                    resAdminObj.fld_errmsg = adminWSObj.getPolicyCashValue(this.admin_username, this.admin_password, policyNumber, "", out  resAdminObj.fld_sessionID, out resAdminObj.fld_client_name, out resAdminObj.fld_plan_name, out resAdminObj.fld_contract_start_date, out resAdminObj.fld_apl, out resAdminObj.fld_apl_interest, out resAdminObj.fld_apl_interest_2, out resAdminObj.fld_cash_value_present, out resAdminObj.fld_date, out resAdminObj.fld_dividend, out resAdminObj.fld_loan_interest, out resAdminObj.fld_loan_interest_2, out resAdminObj.fld_loan_value, out resAdminObj.fld_loan_value_net, out resAdminObj.fld_policy_number, out resAdminObj.fld_premium_outof_payment, out resAdminObj.fld_surrender_value_net, out resAdminObj.fld_year);
+
+                    if (resAdminObj.fld_errmsg.Trim().ToLower() == "หมายเลขกรมธรรม์ถูกต้อง")
+                    {
+                        if (resAdminObj.fld_loan_interest_2.Trim().ToLower() != ".00")
+                        {
+                            obj.Result = "completed";
+                            obj.SessionID = resAdminObj.fld_sessionID.Trim();
+                            obj.PolicyNumber = policyNumber;
+                            obj.PlanName = resAdminObj.fld_plan_name.Trim();
+                            obj.LoanAmount = resAdminObj.fld_loan_interest_2.Trim();
+                            obj.PaymentTypeToPay = "CCP"; //รับบัตรเดบิตเท่านั้น
+
+                        }
+                        else
+                        {
+                            obj.Result = "notcomplete_กรมธรรม์นี้ไม่มีเงินกู้ตามสิทธิ์(Loan)ที่ต้องชำระ";
+
+                        }
+                    }
+                    else
+                    {
+                        obj.Result = "notcomplete_กรุณาระบุหมายเลขกรมธรรม์ให้ถูกต้อง";
+
+                    }
+
+                }
+                else
+                {
+                    this.partnerName = pacobj.PartnerName;
+                    // LogRequest: Insert Log Request
+                    logobj.AddWSLog(this.partnerName, this.ipaddress, "Request", this.webserviceName, methodName, partnerUsername + "|" + policyNumber, this.refnum);
+
+                    obj.Result = pacobj.Result.Trim().Replace("notpass_", "notcomplete_");
+                }
+
+            }
+            // LogResponse: Insert Log Response
+            logobj.AddWSLog(this.partnerName, this.ipaddress, "Response", this.webserviceName, methodName, obj.Result + "|" + obj.PolicyNumber + "|" + "|" + obj.PlanName + "|" + obj.LoanAmount + "|" + obj.PlanName + "|" + obj.PaymentTypeToPay + "|" + obj.SessionID, this.refnum);
+
+            return obj;
+
+        }
+        catch (Exception ex)
+        {
+            obj.Result = "notcomplete_" + ex.Message.ToString();
+
+            // LogResponse: Insert Log Response
+            logobj.AddWSLog(this.partnerName, this.ipaddress, "Response", this.webserviceName, methodName, obj.Result, this.refnum);
+
+            return obj;
+        }
+    }
+    #endregion
+
+    public static long DateDiff(DateInterval intervalType, System.DateTime dateOne, System.DateTime dateTwo)
+    {
+        switch (intervalType)
+        {
+            case DateInterval.Day:
+            case DateInterval.DayOfYear:
+                System.TimeSpan spanForDays = dateTwo - dateOne;
+                return (long)spanForDays.TotalDays;
+            case DateInterval.Hour:
+                System.TimeSpan spanForHours = dateTwo - dateOne;
+                return (long)spanForHours.TotalHours;
+            case DateInterval.Minute:
+                System.TimeSpan spanForMinutes = dateTwo - dateOne;
+                return (long)spanForMinutes.TotalMinutes;
+            case DateInterval.Month:
+                return ((dateTwo.Year - dateOne.Year) * 12) + (dateTwo.Month - dateOne.Month);
+            case DateInterval.Quarter:
+                long dateOneQuarter = (long)System.Math.Ceiling(dateOne.Month / 3.0);
+                long dateTwoQuarter = (long)System.Math.Ceiling(dateTwo.Month / 3.0);
+                return (4 * (dateTwo.Year - dateOne.Year)) + dateTwoQuarter - dateOneQuarter;
+            case DateInterval.Second:
+                System.TimeSpan spanForSeconds = dateTwo - dateOne;
+                return (long)spanForSeconds.TotalSeconds;
+            case DateInterval.Weekday:
+                System.TimeSpan spanForWeekdays = dateTwo - dateOne;
+                return (long)(spanForWeekdays.TotalDays / 7.0);
+            case DateInterval.WeekOfYear:
+                System.DateTime dateOneModified = dateOne;
+                System.DateTime dateTwoModified = dateTwo;
+                while (dateTwoModified.DayOfWeek != System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                {
+                    dateTwoModified = dateTwoModified.AddDays(-1);
+                }
+                while (dateOneModified.DayOfWeek != System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                {
+                    dateOneModified = dateOneModified.AddDays(-1);
+                }
+                System.TimeSpan spanForWeekOfYear = dateTwoModified - dateOneModified;
+                return (long)(spanForWeekOfYear.TotalDays / 7.0);
+            case DateInterval.Year:
+                return dateTwo.Year - dateOne.Year;
+            default:
+                return 0;
         }
     }
 

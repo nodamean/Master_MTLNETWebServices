@@ -22,3 +22,4 @@ C:\Users\mtl87022\Source\Repos\MTLNETWebServices\MTLNETWebServices\bin\x86\Micro
 C:\Users\mtl87022\Source\Repos\MTLNETWebServices\MTLNETWebServices\bin\System.Data.SqlServerCe.dll
 C:\Users\mtl87022\Source\Repos\MTLNETWebServices\MTLNETWebServices\obj\Debug\MTLNETWebServices.dll
 C:\Users\mtl87022\Source\Repos\MTLNETWebServices\MTLNETWebServices\obj\Debug\MTLNETWebServices.pdb
+C:\Users\mtl87022\Source\Repos\MTLNETWebServices\MTLNETWebServices\obj\Debug\MTLNETWebServices.csprojResolveAssemblyReference.cache
